@@ -11,12 +11,30 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "hidehalo/nanoid-php": "^1.1",
+        "illuminate/database": "^8.77",
+        "illuminate/support": "^8.77",
+        "laravelcollective/remote": "^6.2"
     },
-    "require-dev": {},
-    "autoload": {},
+    "autoload": {
+        "psr-4": {
+            "PanelSsh\\Core\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
     "extra": {
-        "laravel": {}
+        "laravel": {
+            "providers": [
+                "PanelSsh\\Core\\CoreServiceProvider"
+            ],
+            "aliases": {
+                "Nanoid": "PanelSsh\\Core\\Facades\\Nanoid"
+            }
+        }
     },
     "config": {
         "optimize-autoloader": true,
