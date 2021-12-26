@@ -32,7 +32,8 @@
                 "PanelSsh\\Core\\CoreServiceProvider"
             ],
             "aliases": {
-                "Nanoid": "PanelSsh\\Core\\Facades\\Nanoid"
+                "Nanoid": "PanelSsh\\Core\\Facades\\Nanoid",
+                "Tunnel": "PanelSsh\\Core\\Facades\\Tunnel"
             }
         }
     },
