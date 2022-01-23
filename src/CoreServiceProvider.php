@@ -26,15 +26,15 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('nanoid', function () {
+        $this->app->bind('nanoid', function () {
             return $this->app->make(Nanoid::class);
         });
 
-        $this->app->singleton('tunnel', function ($app) {
+        $this->app->bind('tunnel', function ($app) {
             return new Tunnel($app);
         });
 
-        $this->app->singleton('socket', function () {
+        $this->app->bind('socket', function () {
             return new Socket();
         });
     }
