@@ -2,6 +2,7 @@
 
 namespace PanelSsh\Core;
 
+use Collective\Remote\RemoteManager;
 use Illuminate\Support\ServiceProvider;
 use PanelSsh\Core\Libraries\Nanoid;
 use PanelSsh\Core\Libraries\Socket;
@@ -31,7 +32,9 @@ class CoreServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('tunnel', function ($app) {
-            return new Tunnel($app);
+            $remoteManager = new RemoteManager($app);
+
+            return new Tunnel($remoteManager);
         });
 
         $this->app->bind('socket', function () {
