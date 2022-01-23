@@ -4,6 +4,7 @@ namespace PanelSsh\Core;
 
 use Illuminate\Support\ServiceProvider;
 use PanelSsh\Core\Libraries\Nanoid;
+use PanelSsh\Core\Libraries\Socket;
 use PanelSsh\Core\Libraries\Tunnel;
 
 class CoreServiceProvider extends ServiceProvider
@@ -31,6 +32,10 @@ class CoreServiceProvider extends ServiceProvider
 
         $this->app->singleton('tunnel', function ($app) {
             return new Tunnel($app);
+        });
+
+        $this->app->singleton('socket', function () {
+            return new Socket();
         });
     }
 }

@@ -13,6 +13,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
+        "ext-sockets": "*",
         "hidehalo/nanoid-php": "^1.1",
         "illuminate/database": "^8.77",
         "illuminate/support": "^8.77",
@@ -33,6 +34,7 @@
             ],
             "aliases": {
                 "Nanoid": "PanelSsh\\Core\\Facades\\Nanoid",
+                "Socket": "PanelSsh\\Core\\Facades\\Socket",
                 "Tunnel": "PanelSsh\\Core\\Facades\\Tunnel"
             }
         }
