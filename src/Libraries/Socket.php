@@ -59,7 +59,7 @@ class Socket
         if (@socket_connect($socket, $this->host, $this->port)) {
             socket_write($socket, $request, strlen($request));
 
-            return json_decode((string) socket_read($socket, 2147483647));
+            return json_decode((string) socket_read($socket, 10240));
         }
 
         return (object) [
